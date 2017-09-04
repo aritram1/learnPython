@@ -40,7 +40,6 @@ def fib_series(i):
         a = b
         b = c
         count = count + 1
-
     print(c)
 
 starttime2 = time.time()
