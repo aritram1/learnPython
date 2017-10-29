@@ -14,5 +14,10 @@ def add(a,b):
 def sub(a,b):
     return a-b
 
-add(1,2)
-sub(1,2)
+addresult = add(1,2)
+subresult = sub(1,2)
+
+print("1+2 is", addresult)
+print("1-2 is", subresult)
+
+
