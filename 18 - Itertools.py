@@ -9,32 +9,34 @@
 import itertools as it
 from time import sleep
 
+values = ['^_^', 'o_o', "'_'", 'O_O']
+
 def simulate(a):
-    sleep(0.25)
+    sleep(0.5)
     print(a) #print(a, end='') does not respect the delay. Why?
     print()
-values = ['^_^', 'o_o', "'_'", 'O_O']
+
 signal = it.cycle(values)
 for _ in range(20):
 	simulate(next(signal))
   
-  '''
-  It outputs :
-  
-  ^_^                                                                                                                              
-                                                                                                                                 
-  o_o                                                                                                                              
-                                                                                                                                 
-  '_'                                                                                                                              
-                                                                                                                                 
-  O_O                                                                                                                              
-                                                                                                                                 
-  ^_^                                                                                                                              
-                                                                                                                                 
-  o_o                                                                                                                              
-                                                                                                                                 
-  '_'                                                                                                                              
-                                                                                                                                 
-  O_O
-  
-  '''
+'''
+It outputs the following with a nice 1/2 second delay :
+
+^_^                                                                                                                              
+
+o_o                                                                                                                              
+
+'_'                                                                                                                              
+
+O_O                                                                                                                              
+
+^_^                                                                                                                              
+
+o_o                                                                                                                              
+
+'_'                                                                                                                              
+
+O_O
+
+'''
