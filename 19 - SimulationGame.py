@@ -8,14 +8,13 @@ class player:
         self.weapons = []
     def loadweapon(self, name):
         self.weapons.append(weapon(name))
-    def play(self):
-        if(self.turn == True):
-            print('{0} has life {1} and weapon {2}'.format(self.name, self.life, self.weapons))
-            self.life = self.life - 10
-            # self.weapon.fire()
-        else:
-            print('No turn available')
+    def play(self, other):
+        self.life = self.life - 10
+        for weapon in self.weapons:
+            weapon.ammo = weapon.ammo - 10
         self.turn = not self.turn
+        other.turn = not other.turn
+        print('{0} has life {1} and weapon {2}'.format(self.name, self.life, self.weapons))
         
 class weapon:
     def __init__(self, name):
@@ -27,6 +26,12 @@ class weapon:
         print('{0} has ammo {1}'.format(self.name, self.ammo))
     def __repr__(self):
         return self.name
+
+class board:
+    def __init__(self):
+       pass
+    def addplayers(self, players):
+        self.players = players
 
 class game:
     def __init__(self):
